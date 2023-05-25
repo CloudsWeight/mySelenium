@@ -6,10 +6,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from secrets import *
+from secrets import secret_user, secret_password
 
 # easier to change path here 
-PATH = 'D:\chromedriver.exe'
+PATH = 'D:\chromedriver.exe' #this is most likely not correct on your machine
 driver = webdriver.Chrome(PATH)
 
 # Set up Chrome WebDriver with DevTools enabled
@@ -21,6 +21,9 @@ driver.get(get_page)
 # Find the login form elements
 username_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'username')))
 password_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'password')))
+
+# the login_button will need a specific value found with inspecting the app
+# this specific login uses a class name 'btn' 
 login_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'btn')))
 
 # Enter login credentials
