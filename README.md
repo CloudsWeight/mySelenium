@@ -1,8 +1,2 @@
-# mySelenium
-Testing, sweet.
-
-
-# Templates for testing React
-
-
+#  Scripts for lazy people
 
